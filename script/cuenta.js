@@ -4,7 +4,7 @@ let egresos = []
 
 function mostrarBalance() {
     const balanceHtml = document.getElementById("balance")
-    balanceHtml.textContent = `$${balance}`
+    balanceHtml.textContent = `$${balance.toFixed(2)}`
 }
 
 function agregarIngreso() {
@@ -39,7 +39,7 @@ function agregarEgreso() {
 function mostrarIngresos() {
     let ingreso = document.getElementById("incomesBalance")
     let ingresoNeto = ingresos.map((movimiento) => Number(movimiento.cantidad))
-    ingreso.textContent = `Ingresos totales: $${Number(ingresoNeto.reduce((a, b) => a + b))}`
+    ingreso.textContent = `Ingresos totales: $${Number(ingresoNeto.reduce((a, b) => a + b)).toFixed(2)}`
     // Lista de Ingresos
     let concepto = ingresos.map((movimiento) => movimiento.concepto)
     let cantidad = ingresos.map((movimiento) => movimiento.cantidad)
@@ -54,7 +54,7 @@ function mostrarIngresos() {
 function mostrarEgresos() {
     let egreso = document.getElementById("expensesBalance")
     let egresoNeto = egresos.map((movimiento) => Number(movimiento.cantidad))
-    egreso.innerText = `Gastos totales: $${egresoNeto.reduce((a, b) => a + b)}`
+    egreso.innerText = `Gastos totales: $${Number(egresoNeto.reduce((a, b) => a + b)).toFixed(2)}`
     // Lista de Egresos
     let concepto = egresos.map((movimiento) => movimiento.concepto)
     let cantidad = egresos.map((movimiento) => movimiento.cantidad)

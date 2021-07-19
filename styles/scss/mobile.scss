@@ -156,6 +156,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        list-style: none;
         li {
             margin-top: 0.8rem;
             font-size: $li-list;
@@ -271,7 +272,7 @@ body {
             padding: 0 2rem;
             ul {
                 li {
-                    // margin-top: 1rem;
+                    margin-top: 1rem;
                     font-size: 1.8rem;
                 }
             }
